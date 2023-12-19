@@ -1,0 +1,27 @@
+# Site settings
+title: Camille et Maxime 2023
+email: t-vdcx@pm.me
+url: https://127.0.0.1
+description: "Mariage le 1er juin 2023"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  background: '#FFFBFE'
+  primary: '#6750A4'
+  primary-container: '#EADDFF'
+  secondary: '#625B71'
+  secondary-container: '#625B71'
+  tertiary: '#7D5260'
+  tertiary-container: '#FFD8E4'
+
+# Footer settings
+footer: Your maxime Londéchal
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: https://github.com/IronSummitMedia/startbootstrap
+
+# Build settings
+markdown: kramdown
+permalink: pretty
