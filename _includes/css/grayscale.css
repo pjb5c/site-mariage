@@ -4,10 +4,15 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+@font-face {
+font-family: 'Southland';
+src: URL('font/Southland.ttf') format('truetype');
+}
+
 body {
     width: 100%;
     height: 100%;
-    font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #000000;
     background-color: {{ site.color.background }};
 }
@@ -24,22 +29,23 @@ h4,
 h5,
 h6 {
     margin: 0 0 35px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: "Southland","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 8rem;
     letter-spacing: 1px;
+    font-weight: 400;
+    color: {{ site.color.primary }};
 }
 
 p {
     margin: 0 0 25px;
-    font-size: 18px;
+    font-size: 2rem;
     line-height: 1.5;
 }
 
 @media(min-width:767px) {
     p {
         margin: 0 0 35px;
-        font-size: 20px;
+        font-size: 2rem;
         line-height: 1.6;
     }
 }
@@ -64,23 +70,17 @@ a:focus {
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /* text-transform: uppercase; */
+    font-size: 6rem;
+    font-family: "Southland","Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: {{ site.color.background }};
+
 }
 
-.navbar-custom .navbar-brand {
-    font-weight: 700;
-}
-
-.navbar-custom .navbar-brand:focus {
-    outline: 0;
-}
-
-.navbar-custom .navbar-brand .navbar-toggle {
-    padding: 4px 6px;
-    font-size: 16px;
-    color: #000000;
+.navbar-toggle {
+    padding: 0px;
+    padding-right: 1rem;
+    margin: 0px;
 }
 
 .navbar-custom .navbar-brand .navbar-toggle:focus,
@@ -89,7 +89,7 @@ a:focus {
 }
 
 .navbar-custom a {
-    color: #000000;
+    color: {{ site.color.primary }};
 }
 
 .navbar-custom .nav li.active {
@@ -112,9 +112,9 @@ a:focus {
 
 @media(min-width:767px) {
     .navbar {
-        padding: 20px 0;
+        /* padding: 1.5rem 0; */
         border-bottom: 0;
-        letter-spacing: 1px;
+        letter-spacing: 0px;
         background: 0 0;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -123,6 +123,7 @@ a:focus {
 
     .top-nav-collapse {
         padding: 0;
+        padding-top: 1rem;
         background-color: {{ site.color.background }};
     }
 
@@ -151,49 +152,33 @@ a:focus {
     vertical-align: middle;
 }
 
-.intro .intro-body .brand-heading {
-    font-size: 40px;
-}
-
-.intro .intro-body .intro-text {
-    font-size: 18px;
-}
-
 @media(min-width:767px) {
     .intro {
         height: 100%;
         padding: 0;
     }
-
-    .intro .intro-body .brand-heading {
-        font-size: 100px;
-    }
-
-    .intro .intro-body .intro-text {
-        font-size: 25px;
-    }
 }
 
 .btn-circle {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid #000000;
     border-radius: 35px;
-    font-size: 40px;
-    color: #000000;
+    font-size: 4rem;
     background: 0 0;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
+    border: 5px solid {{ site.color.primary-container }};
+    color: {{ site.color.primary-container }};
 }
 
 .btn-circle:hover,
 .btn-circle:focus {
     outline: 0;
-    color: #000000;
     background: rgba(0, 0, 0, 0.1);
+    color: {{ site.color.primary-container }};;
 }
 
 .btn-circle i.animated {
@@ -266,8 +251,7 @@ a:focus {
 
 #map {
     width: 100%;
-    height: 200px;
-    margin-top: 100px;
+    height: 50%;
 }
 
 @media(min-width:767px) {
@@ -280,8 +264,9 @@ a:focus {
     }
 
     #map {
-        height: 400px;
-        margin-top: 250px;
+        height: 60rem;
+        margin-top: 0;
+        padding-top: 0;
     }
 }
 
@@ -364,4 +349,27 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
+}
+
+#lavandes{
+    transform: rotate(0.1turn);
+    max-width:30rem;
+    max-height:30rem;
+}
+
+#roses{
+    max-width:40rem;
+    max-height:40rem;
+}
+
+@media(max-width:767px) {
+    #roses{
+        max-width:20rem;
+        max-height:20rem;
+    }
+    #lavandes{
+        transform: rotate(0.1turn);
+        max-width:30rem;
+        max-height:30rem;
+    }
 }
