@@ -12,7 +12,7 @@ src: URL('font/Southland.ttf') format('truetype');
 body {
     width: 100%;
     height: 100%;
-    font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Junge","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #000000;
     background-color: {{ site.color.background }};
 }
@@ -40,6 +40,15 @@ p {
     margin: 0 0 25px;
     font-size: 2rem;
     line-height: 1.5;
+}
+
+#date{
+    font-size: 4rem;
+}
+
+p::first-letter {
+	font-size: 4rem;
+    color: {{ site.color.primary }};
 }
 
 @media(min-width:767px) {
@@ -139,7 +148,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #000000;
-    background: url(img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(img/intro-bgdegrade.png) no-repeat bottom center scroll;
     background-color: {{ site.color.background }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -233,6 +242,11 @@ a:focus {
     }
 }
 
+@media(max-width:767px) {
+    .btn-circle{
+        visibility: hidden;
+    }
+}
 .content-section {
     padding-top: 100px;
 }
@@ -308,6 +322,7 @@ ul.banner-social-buttons li {
 }
 
 @media(max-width:767px) {
+
     ul.banner-social-buttons li {
         display: block;
         margin-bottom: 20px;
@@ -372,4 +387,16 @@ body {
         max-width:30rem;
         max-height:30rem;
     }
+}
+
+#transport li {
+    text-align: left;
+    list-style-type: none;
+}
+
+#transport li::before {
+    content: "▪";
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: {{ site.color.primary }}
 }

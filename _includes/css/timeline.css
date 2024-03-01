@@ -46,30 +46,29 @@
             width: 50rem;
             height: 50rem;
         }
+        .angle{
+            position: absolute;
+            visibility: visible;
+            top: 11rem;
+            right: calc(50% + 5rem);
+            font-size: 3rem;
+            color: {{ site.color.secondary}};
+        }
 
-            .timeline > li > .timeline-panel:before {
-                position: absolute;
-                top: 11rem;
-                right: -3rem;
-                display: inline-block;
-                border-top: 15px solid transparent;
-                border-left: 15px solid {{ site.color.secondary }};
-                border-right: 0 solid {{ site.color.secondary }};
-                border-bottom: 15px solid transparent;
-                content: " ";
-            }
+        .angle-inverted {
+            position: absolute;
+            top: 11rem;
+            left: calc(50% + 5rem);
+            font-size: 3rem;
+            color: {{ site.color.secondary}};
+        }
 
-            .timeline > li > .timeline-panel:after {
-                position: absolute;
-                top: calc(11rem + 1px);
-                right: calc(-3rem + 4px);
-                display: inline-block;
-                border-top: 14px solid transparent;
-                border-left: 14px solid #fff;
-                border-right: 0 solid #fff;
-                border-bottom: 14px solid transparent;
-                content: " ";
-            }
+        .angle-portable {
+            position: absolute;
+            visibility: hidden;
+            font-size: 3rem;
+            color: {{ site.color.secondary}};
+        }
 
         .timeline > li > .timeline-badge {
             
@@ -95,22 +94,6 @@
             float: right;
         }
 
-            .timeline > li.timeline-inverted > .timeline-panel:before {
-                position: absolute;
-                border-left-width: 0;
-                border-right-width: 15px;
-                left: calc(-3rem);
-                right: auto;
-            }
-
-            .timeline > li.timeline-inverted > .timeline-panel:after {
-                position: absolute;
-                border-left-width: 0;
-                border-right-width: 15px;
-                left: calc(-3rem + 4px);
-                right: auto;
-            }
-
 .timeline-title {
     margin: 0;
     position: absolute;
@@ -126,7 +109,7 @@
 .timeline-body > p,
 .timeline-body > ul {
     position: absolute;
-    top: 17rem;
+    top: 27rem;
     margin-left: auto;
     margin-right: auto;
     left: 10rem;
@@ -137,6 +120,17 @@
     .timeline-body > p + p {
         margin-top: 5px;
     }
+
+.timeline-hour{
+    position: absolute;
+    top: 20rem;
+    font-size: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 10rem;
+    right: 10rem;
+    text-align: center;
+}
 
 #crown{
     width: 50rem;
@@ -167,37 +161,20 @@
         float: right;
     }
 
-        ul.timeline > li > .timeline-panel:before {
-            border-left-width: 0;
-            border-right-width: 15px;
-            top: 2rem;
-            left: 4rem;
-            right: auto;
-        }
+    .angle{
+        visibility: hidden;
+    }
 
-        ul.timeline > li > .timeline-panel:after {
-            border-left-width: 0;
-            border-right-width: 15px;
-            top: 2rem;
-            left: calc(4rem + 3px);
-            right: auto;
-        }
+    .angle-inverted {
+        top: 2rem;
+        left: 8rem;
+    }
 
-        ul.timeline > li.timeline-inverted > .timeline-panel:before {
-            border-left-width: 0;
-            border-right-width: 15px;
-            top: 2rem;
-            left: 4rem;
-            right: auto;
-        }
-
-        ul.timeline > li.timeline-inverted > .timeline-panel:after {
-            border-left-width: 0;
-            border-right-width: 15px;
-            top: 2rem;
-            left: calc(4rem + 3px);
-            right: auto;
-        }
+    .angle-portable {
+        visibility: visible;
+        top: 2rem;
+        left: 8rem;
+    }
 
         .timeline-title {
             top: 0;
@@ -215,12 +192,18 @@
         }
         #mobile-crown{
             visibility: visible;
+            top: 5rem;
             width: 30rem;
             height: 30rem;
             position: absolute;
-            bottom: 0;
-            left: 1rem;
-        };
-        
-}
-
+            left: 3rem;
+            /* right: 20rem; */
+        }
+        .timeline-hour{
+            top: 8rem;
+        }
+        .timeline-body > p {
+            top: 15rem;
+            width: 20rem;
+        }
+    }
