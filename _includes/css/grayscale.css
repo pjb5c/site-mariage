@@ -148,7 +148,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #000000;
-    background: url(img/intro-bgdegrade.png) no-repeat bottom center scroll;
+    background: url(img/intro-bgdegradex.avif) no-repeat bottom center scroll;
     background-color: {{ site.color.background }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
