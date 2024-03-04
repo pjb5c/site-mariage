@@ -60,7 +60,7 @@ p::first-letter {
 }
 
 a {
-    color: {{ site.color.tertiary-container }};
+    color: {{ site.color.tertiary }};
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -389,14 +389,31 @@ body {
     }
 }
 
-#transport li {
+li {
     text-align: left;
     list-style-type: none;
 }
 
-#transport li::before {
+#transport li::before,
+#hebergement li::before {
     content: "▪";
     font-size: 2rem;
     margin-right: 1rem;
     color: {{ site.color.primary }}
+}
+
+footer p{
+    font-size: 1rem;
+}
+footer p::first-letter {
+	font-size: 2rem;
+}
+
+h4 {
+    font-size: 5rem;
+}
+
+#contact li {
+    text-align: center;
+    font-size: 2rem;
 }

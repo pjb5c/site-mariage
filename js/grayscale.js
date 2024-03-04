@@ -35,11 +35,29 @@ $("a").mouseup(function(){
     $(this).blur();
 })
 
-var map = L.map('map').setView([43.1576, 6.4604], 11);
-L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
-    maxZoom: 19,
+var stamen = L.tileLayer('https://tiles-eu.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg', {
+    maxZoom: 16,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+})
+
+var alidade = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+    maxZoom: 20,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+})
+
+var map = L.map('map', {
+    center: [43.1576, 6.4604],
+    zoom: 11,
+    layers: [stamen, alidade]
+});
+
+var baseMaps = {
+    "Détaillé": alidade,
+    "Aquarelle": stamen
+};
+
+var layerControl = L.control.layers(baseMaps).addTo(map);
+
 var icon = L.icon({
     iconUrl: 'img/map-marker.ico',
     iconSize: [50, 50],
@@ -47,7 +65,10 @@ var icon = L.icon({
 });
 var marker_mairie = L.marker([43.16051, 6.46709], {icon: icon}).addTo(map).bindTooltip("<b>Mairie</b>", {className: 'tooltip'});
 var marker_eglise = L.marker([43.16007, 6.48085], {icon: icon}).addTo(map).bindTooltip("<b>Église</b>", {className: 'tooltip'});
-var marker_resto = L.marker([43.15138, 6.42481], {icon: icon}).addTo(map).bindTooltip("<b>Les Canetons</b>", {className: 'tooltip'});
+var marker_resto = L.marker([43.15178, 6.42941], {icon: icon}).addTo(map).bindTooltip("<b>Les Canetons</b>", {className: 'tooltip'});
+var marker_parmai = L.marker([43.160455, 6.466764], {icon: icon}).addTo(map).bindTooltip("<b>Parking Mairie</b>", {className: 'tooltip'});
+var marker_paregl = L.marker([43.15979, 6.48025], {icon: icon}).addTo(map).bindTooltip("<b>Parking Église</b>", {className: 'tooltip'});
+var marker_parcav = L.marker([43.152486, 6.42834], {icon: icon}).addTo(map).bindTooltip("<b>Parking Cavalière</b>", {className: 'tooltip'});
 
 
 /*! Jack In The Box - v0.0.5 - 2014-01-15
